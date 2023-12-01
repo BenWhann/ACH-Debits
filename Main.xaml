@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,8793" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="914.4,8791.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="94">
       <x:String>System.Activities</x:String>
@@ -119,7 +119,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="924,8728" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="924.8,8726.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="todaysDate" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="currentDayEmail" />
@@ -137,13 +137,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FolderCreation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="862,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="FolderCreation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FolderCreation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="862.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="FolderCreation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:CopyFolderX ContinueOnError="{x:Null}" DisplayName="Copy ACH Debit Folder Structure" From="S:\ACCTSPAY\Debit ACH\ACH Debit Folder Structure" sap:VirtualizedContainerService.HintSize="862,159" sap2010:WorkflowViewState.IdRef="CopyFolderX_1" IncludeSubfolders="True" Overwrite="True" To="S:\ACCTSPAY\Debit ACH\CY 2023\11 Nov 2023" />
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[currentYear]</OutArgument>
       </Assign.To>
@@ -151,7 +150,7 @@
         <InArgument x:TypeArguments="x:String">["CY"+" "+Date.Now().ToString("yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[currentMonth]</OutArgument>
       </Assign.To>
@@ -159,7 +158,8 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().ToString("MM yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:CopyFolderX ContinueOnError="{x:Null}" DisplayName="Copy ACH Debit Folder Structure" From="S:\ACCTSPAY\Debit ACH\ACH Debit Folder Structure" sap:VirtualizedContainerService.HintSize="862.4,160" sap2010:WorkflowViewState.IdRef="CopyFolderX_1" IncludeSubfolders="True" Overwrite="True" To="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth]" />
+    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[todaysDate]</OutArgument>
       </Assign.To>
@@ -167,7 +167,7 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().ToString("MM-dd-yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[previousDate]</OutArgument>
       </Assign.To>
@@ -175,7 +175,7 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().AddDays(-1).ToString("MM-dd-yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[yesterdaysDate]</OutArgument>
       </Assign.To>
@@ -183,8 +183,8 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().AddDays(-1).ToString("yy.MM.dd")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:RenameFolderX DisplayName="Rename ACH Debit Folder" FolderPath="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth+&quot;\ACH Debit Folder Structure&quot;]" sap:VirtualizedContainerService.HintSize="862,132" sap2010:WorkflowViewState.IdRef="RenameFolderX_1" NewName="[todaysDate]" />
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:RenameFolderX DisplayName="Rename ACH Debit Folder" FolderPath="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth+&quot;\ACH Debit Folder Structure&quot;]" sap:VirtualizedContainerService.HintSize="862.4,133.6" sap2010:WorkflowViewState.IdRef="RenameFolderX_1" NewName="[todaysDate]" />
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[previousDaySubject]</OutArgument>
       </Assign.To>
