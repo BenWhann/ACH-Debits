@@ -192,7 +192,7 @@
         <InArgument x:TypeArguments="x:String">[yesterdaysDate+" ACH Debit Report Previous Day.pdf"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" Account="AP Payments" DisplayName="Get Outlook Mail Messages" Filter="[Subject] = 'AP ACH Debit Report.xlsx'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862,25" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_3" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[currentDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" TimeoutMS="30000" Top="3" />
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" Account="AP Payments" DisplayName="Get Outlook Mail Messages" Filter="[Subject] = 'AP ACH Debit Report.xlsx'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862,25" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_3" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[currentDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" TimeoutMS="60000" Top="3" />
     <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="AP Payments" DisplayName="Get Outlook Mail Messages" Filter="[&quot;[Subject] = '&quot;+previousDaySubject+&quot;'&quot;]" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862,25" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_4" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[previousDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="3" />
     <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="862,326" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[currentDayEmail]">
       <ui:ForEach.Body>
@@ -358,8 +358,8 @@
                         <ueab:NumberFormat DecimalPlaces="2" UseThousandSeparator="True" />
                       </ueab:FormatRangeX.Format>
                     </ueab:FormatRangeX>
-                    <ueab:InsertColumnX ColumnFormat="{x:Null}" DisplayName="Insert Column" HasHeaders="True" sap:VirtualizedContainerService.HintSize="540,208" sap2010:WorkflowViewState.IdRef="InsertColumnX_2" NewColumnName="Matched" Range="[Excel.Sheet(&quot;SAPUI5 Export&quot;).Range(&quot;A:L&quot;)]" RelativeColumnName="H" RelativePosition="After" />
-                    <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="540,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;SAPUI5 Export&quot;).Range(&quot;A:I&quot;)]" SaveTo="[dt_SupplierLineItems]" />
+                    <ueab:InsertColumnX ColumnFormat="{x:Null}" DisplayName="Insert Column" HasHeaders="False" sap:VirtualizedContainerService.HintSize="540,208" sap2010:WorkflowViewState.IdRef="InsertColumnX_3" NewColumnName="Matched" Range="[Excel.Sheet(&quot;SAPUI5 Export&quot;)]" RelativeColumnName="H" RelativePosition="After" />
+                    <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="540,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;SAPUI5 Export&quot;).Range(&quot;A:J&quot;)]" SaveTo="[dt_SupplierLineItems]" />
                   </Sequence>
                 </ActivityAction>
               </ueab:ExcelApplicationCard.Body>
