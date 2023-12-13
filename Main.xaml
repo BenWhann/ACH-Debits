@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1097,9942" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="914.4,11188" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umac="clr-namespace:UiPath.MicrosoftOffice365.Activities.Contracts;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="94">
+    <scg:List x:TypeArguments="x:String" Capacity="110">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -50,10 +50,17 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Contracts</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -117,9 +124,11 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="924,9877" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="924.8,11123.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="todaysDate" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="currentDayEmail" />
@@ -137,12 +146,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FolderCreation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="862,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="FolderCreation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FolderCreation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="862.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="FolderCreation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[currentYear]</OutArgument>
       </Assign.To>
@@ -150,7 +159,7 @@
         <InArgument x:TypeArguments="x:String">["CY"+" "+Date.Now().ToString("yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[currentMonth]</OutArgument>
       </Assign.To>
@@ -158,8 +167,8 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().ToString("MM yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CopyFolderX ContinueOnError="{x:Null}" DisplayName="Copy ACH Debit Folder Structure" From="S:\ACCTSPAY\Debit ACH\ACH Debit Folder Structure" sap:VirtualizedContainerService.HintSize="862,159" sap2010:WorkflowViewState.IdRef="CopyFolderX_1" IncludeSubfolders="True" Overwrite="True" To="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth]" />
-    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:CopyFolderX ContinueOnError="{x:Null}" DisplayName="Copy ACH Debit Folder Structure" From="S:\ACCTSPAY\Debit ACH\ACH Debit Folder Structure" sap:VirtualizedContainerService.HintSize="862.4,160" sap2010:WorkflowViewState.IdRef="CopyFolderX_1" IncludeSubfolders="True" Overwrite="True" To="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth]" />
+    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[todaysDate]</OutArgument>
       </Assign.To>
@@ -167,7 +176,7 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().ToString("MM-dd-yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[previousDate]</OutArgument>
       </Assign.To>
@@ -175,7 +184,7 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().AddDays(-1).ToString("MM-dd-yyyy")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign folder name variable" sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[yesterdaysDate]</OutArgument>
       </Assign.To>
@@ -183,8 +192,8 @@
         <InArgument x:TypeArguments="x:String">[Date.Now().AddDays(-1).ToString("yy.MM.dd")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:RenameFolderX DisplayName="Rename ACH Debit Folder" FolderPath="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth+&quot;\ACH Debit Folder Structure&quot;]" sap:VirtualizedContainerService.HintSize="862,132" sap2010:WorkflowViewState.IdRef="RenameFolderX_1" NewName="[todaysDate]" />
-    <Assign sap:VirtualizedContainerService.HintSize="862,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:RenameFolderX DisplayName="Rename ACH Debit Folder" FolderPath="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth+&quot;\ACH Debit Folder Structure&quot;]" sap:VirtualizedContainerService.HintSize="862.4,133.6" sap2010:WorkflowViewState.IdRef="RenameFolderX_1" NewName="[todaysDate]" />
+    <Assign sap:VirtualizedContainerService.HintSize="862.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[previousDaySubject]</OutArgument>
       </Assign.To>
@@ -192,21 +201,95 @@
         <InArgument x:TypeArguments="x:String">[yesterdaysDate+" ACH Debit Report Previous Day.pdf"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" Account="AP Payments" DisplayName="Get Outlook Mail Messages" Filter="[Subject] = 'AP ACH Debit Report.xlsx'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862,25" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_3" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[currentDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" TimeoutMS="60000" Top="3" />
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="AP Payments" DisplayName="Get Outlook Mail Messages" Filter="[&quot;[Subject] = '&quot;+previousDaySubject+&quot;'&quot;]" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862,25" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_4" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[previousDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="3" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="862,326" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[currentDayEmail]">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="862.4,1065.6" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="540,987.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uma:Office365ApplicationScope Account="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ApplicationId="1a47554b-c160-4565-84ea-c67bb4b97375" AuthenticationType="InteractiveToken" DisplayName="Microsoft Office 365 Scope" Environment="Default" sap:VirtualizedContainerService.HintSize="477.6,875.2" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="UiPath" TenantId="0b03090b-7ffa-45ab-a46b-387130ec0633" UseConnectionService="False">
+            <uma:Office365ApplicationScope.ApplicationSecret>
+              <InArgument x:TypeArguments="x:String" />
+            </uma:Office365ApplicationScope.ApplicationSecret>
+            <uma:Office365ApplicationScope.AuthenticationScopes>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </uma:Office365ApplicationScope.AuthenticationScopes>
+            <uma:Office365ApplicationScope.Body>
+              <ActivityAction x:TypeArguments="umac:IClientServices">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="umac:IClientServices" Name="ParentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,708" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="umm:Office365Message[]" Name="currentDayEmail" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <umam:GetMail ContinueOnError="{x:Null}" Account="APPayments@chsinc.com" AuthScopesInvalid="False" DisplayName="Get Mail" GetAsHTML="False" sap:VirtualizedContainerService.HintSize="337.6,596" sap2010:WorkflowViewState.IdRef="GetMail_1" MailFolder="Inbox/ACH-Debits" MarkAsRead="True" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Results="[currentDayEmail]">
+                    <umam:GetMail.EmailId>
+                      <InArgument x:TypeArguments="x:String" />
+                    </umam:GetMail.EmailId>
+                    <umam:GetMail.Query>
+                      <InArgument x:TypeArguments="x:String" />
+                    </umam:GetMail.Query>
+                    <umam:GetMail.Top>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </umam:GetMail.Top>
+                  </umam:GetMail>
+                </Sequence>
+              </ActivityAction>
+            </uma:Office365ApplicationScope.Body>
+            <uma:Office365ApplicationScope.CertificateAsBase64>
+              <InArgument x:TypeArguments="x:String" />
+            </uma:Office365ApplicationScope.CertificateAsBase64>
+            <uma:Office365ApplicationScope.CertificatePassword>
+              <InArgument x:TypeArguments="ss:SecureString" />
+            </uma:Office365ApplicationScope.CertificatePassword>
+            <uma:Office365ApplicationScope.ContinueOnError>
+              <InArgument x:TypeArguments="x:Boolean" />
+            </uma:Office365ApplicationScope.ContinueOnError>
+            <uma:Office365ApplicationScope.OAuth2Username>
+              <InArgument x:TypeArguments="x:String" />
+            </uma:Office365ApplicationScope.OAuth2Username>
+            <uma:Office365ApplicationScope.Password>
+              <InArgument x:TypeArguments="x:String" />
+            </uma:Office365ApplicationScope.Password>
+            <uma:Office365ApplicationScope.SecureApplicationSecret>
+              <InArgument x:TypeArguments="ss:SecureString" />
+            </uma:Office365ApplicationScope.SecureApplicationSecret>
+            <uma:Office365ApplicationScope.SecurePassword>
+              <InArgument x:TypeArguments="ss:SecureString" />
+            </uma:Office365ApplicationScope.SecurePassword>
+            <uma:Office365ApplicationScope.Timeout>
+              <InArgument x:TypeArguments="x:Int32" />
+            </uma:Office365ApplicationScope.Timeout>
+            <uma:Office365ApplicationScope.Username>
+              <InArgument x:TypeArguments="x:String" />
+            </uma:Office365ApplicationScope.Username>
+          </uma:Office365ApplicationScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" Account="APPayments@chsinc.com" DisplayName="Get Outlook Mail Messages" Filter="[Subject] = 'AP ACH Debit Report.xlsx'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862.4,80.8" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_5" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[currentDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" TimeoutMS="60000" Top="3" />
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="AP Payments" DisplayName="Get Outlook Mail Messages" Filter="[&quot;[Subject] = '&quot;+previousDaySubject+&quot;'&quot;]" GetAttachements="False" sap:VirtualizedContainerService.HintSize="862.4,80.8" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_6" MailFolder="Inbox\ACH-Debits" MarkAsRead="True" Messages="[previousDayEmail]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="3" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="862.4,356.8" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[currentDayEmail]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentDayReport" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,192.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth+&quot;\&quot;+todaysDate+&quot;\ACH Debit Report&quot;]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentDayReport]" OverwriteExisting="False" />
+            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="[&quot;S:\ACCTSPAY\Debit ACH\&quot;+currentYear+&quot;\&quot;+currentMonth+&quot;\&quot;+todaysDate+&quot;\ACH Debit Report&quot;]" sap:VirtualizedContainerService.HintSize="337.6,80.8" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentDayReport]" OverwriteExisting="False" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
@@ -241,12 +324,12 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
-            <uix:NClick ClickType="Single" DisplayName="Click 'SAP.UI.CORE.ICON __toke…'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SAP.UI.CORE.ICON __toke…'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sapps1.aws.chsinc.ds/flp#Supplier-manageLineItems&amp;/?sap-iapp-state=ASC486VWOTEO1EBRVHC5WRASX6VSSQBFMJRGK5C8" DesignTimeRectangle="175, 228, 16, 19" DesignTimeScaleFactor="1" FriendlyName="'SAP.UI.CORE.ICON __toke…'" FullSelectorArgument="&lt;webctrl ui5-class='sap.ui.core.Icon' ui5p-src='sap-icon://decline' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-class='sap.ui.core.Icon' ui5p-src='sap-icon://decline' tag='SPAN' type='' class='sapUiIcon sapUiIconMirrorInRTL sapUiIconPointer sapMTokenIcon' aaname='' /&gt;" Guid="c287031a-302e-4ec5-9155-e85520586ec7" InformativeScreenshot="a35d15a9dcd8e0611541b24dbc2653d8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Manage Supplier Line Items' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Cleared ItemsCleared'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cleared ItemsCleared'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sapps1.aws.chsinc.ds/flp#Supplier-manageLineItems&amp;/?sap-iapp-state=ASC486VWOTEO1EBRVHC5WRASX6VSSQBFMJRGK5C8" DesignTimeRectangle="504, 224, 206, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Cleared ItemsCleared'" FullSelectorArgument="&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.CustomSelectClearingStatus' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.CustomSelectClearingStatus' tag='DIV' type='' class='sapMSlt sapMSltDefault sapMSltMinWidth sapMSltHoverable sapMSltWithArrow' aaname='' /&gt;" Guid="b72dc7f9-f35f-47a0-8c81-461504a18c10" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANIAAAAeCAYAAABZs0CNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATdSURBVHhe7ZztT9tWFIf3t+0v2ZeVtvQVaIGW10K3BmhLqDQYFEpL+oEUNqlk7MOATS1MGltYVVpgDZCknQjh/f0dzvw7ynVdy3GCbTohnUe6Irav7Wt0Ht9zLihfkCAIrhGRBMEDdJFev52gB81PyOdvliZNWoYGV+CMQhcJBxKzc6ktQRDsgCtwRqGLBMsEQcgeozMikiA4REQSBA8QkQTBA0QkQfAAEUkQPMC1SB8+/Ev379fTufO5dCbnLN0sKaW/X72io6MjPt7TE6Lm5hb+/H+zvb1NPl8NhcMjqT2fgrHiOPoJwnFwJdLk5CRdzcunen8DxWJxmpufp+4ffqRLl6/Qixcvuc9pFWlnZ4efK11fQTDiWCQVlC0tD2l/fz+1l3gm+qm3l551ddHBwcGpFSlTX0Ew4lgkzEDXrhfSxMTHf42wwizS7u4udQaDlHvhIuWcPUe+mlpaXFzkY5Dwj+FhunHjJn19JocuXrpMv/T16WkirtPW9ogqb1XpAT81NUVl5eWcVl65mvdJfxwPBJ5y2on2sLWVqqqqM4q0vLzMPzEGtMKiYt5nN3Ycr6iopFAoRCWlZTyeb+/4KBKJ8E9s47lisRj3Hxsb08eN5+zsDPJ4hZNjfnWbviwJUVvfP6k96UEf9MU52eBYJASjCjA7jCIhwDFTIbCSyTkOHARmXd1d/oygrPf76fXoKB0eHtL4+DjL+u5dhM/HdSBLeGSE1tbWKJFIULEWnAMDv9Le3h5NR6NajVZCf4XDfC9IZLwX7o3AdTIjZRo7fg9FxcUsF8YVf/+ex5ZfcI2lWVpa4loSMzj619TWUf/AAD9nPB6n7xobOTUWTpbNnX36yv+brUw4hj7omy2uRLpeWKS/kdNhFAnBX1pWTsPDf/I2SCaTvA8znBlzMOM6TU3f6zNOf3+/Fth3aGtri7dBMPiMWlvbLO+1sbGR1YyE+5rvnWnsSiRIrMB4OzoCqa2P18e1GhoesFiQyJgaCyePnUxOJAKORULw5OUX0Kg2e9hhFAnBhllMpUzGhoBF8CLFKdDe4uZjANfB9RT4bOynGoJ1dnaWUyc1mwGzHGbsRMo0dhxHajc9Pc39gdV41fUhf1d3N8+4SDsftbfT5uZmqqdw0ljJ5FQi4Fgk1At3793jtyoCwwje2iqFQfAokaze6kYwwyA1w5I6Zh1zMJsD02pGUqysrHBqZbwX9qF+cSJSprEfVyQjSBWrb39Dvb0/p/YInwOjTG4kAo5FAlj+Rs1SU1ur1TMT+vL3+dwLXHRDBgQPgn1hYYHrAdQZFZW3OKVBXfNycJA6AgFObxBISL0QlNhG7YO3dTqREtqsA1meP+/h4ERAok9EGxfu/fhJB9c0MzMztLq66qhGwuIFzsUKpN3YjyMS6iW8aFQtuL6+zrWWiPT5UTK5kQi4EglY/UEWK2+qjlEpYLkWZAgYzGSQDStV6I/0682bt9wf9ZZa4cL12tsfs1iDg0N8LXNggmg0SlXVt/kcrKZhgUHNUKiJGhubeIXNuGqXLmCNImE8WMbHuZAVs5nd2I8jElK4oaHfuaZSzyqp3enGtUiCIIhIguAJIpIgeICIJAgeICIJggeISILgAZYiyddxCUL2pP06LvmCSGnSsm9wxfILIgVBcI6IJAiuIfoP/JH2uYj6AvkAAAAASUVORK5CYII=" InformativeScreenshot="ce764ae14bf3d68fc26676442b5742bc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Manage Supplier Line Items' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -257,7 +340,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Open Items'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Open Items'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sapps1.aws.chsinc.ds/flp#Supplier-manageLineItems&amp;/?sap-iapp-state=ASC486VWOTEO1EBRVHC5WRASX6VSSQBFMJRGK5C8" DesignTimeRectangle="504, 250, 206, 32" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'Open Items'" FullSelectorArgument="&lt;webctrl ui5-class='sap.m.Popover' /&gt;&lt;webctrl ui5-class='sap.m.SelectList' /&gt;&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.ClearingStatusOpen' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-class='sap.m.Popover' /&gt;&lt;webctrl ui5-class='sap.m.SelectList' /&gt;&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.ClearingStatusOpen' tag='LI' type='' class='sapMSelectListItemBase sapMSelectListItem sapMSelectListItemBaseHoverable' aaname='Open Items' check:innerText='Open Items' /&gt;" Guid="7eefa31c-2d17-4709-918b-bde314cc37a7" InformativeScreenshot="afcc1fe65b03b931bf15cb25e3315229.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Manage Supplier Line Items' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -267,12 +350,12 @@
                 <uix:TargetAnchorable BrowserURL="https://sapps1.aws.chsinc.ds/flp#Supplier-manageLineItems&amp;/?sap-iapp-state=ASC486VWOTEO1EBRVHC5WRASX6VSSQBFMJRGK5C8" DesignTimeRectangle="504, 286, 206, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'No tokens'" FullSelectorArgument="&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.SmartFilterBar-filterItemControlfin.ap.lineitems.display.PaymentGroup-PaymentMethod' /&gt;" FuzzySelectorArgument="&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.SmartFilterBar-filterItemControlfin.ap.lineitems.display.PaymentGroup-PaymentMethod' tag='DIV' type='' class='sapMInputBase sapMInputBaseHeightMargin sapMInput sapMMultiInput sapMInputBaseHasEndIcons' aaname='' /&gt;" Guid="5d29f621-6b4b-4bda-9efb-83cf7d21a77b" InformativeScreenshot="ba84e4fdd32c3d08e27f45bc0a737b95.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Manage Supplier Line Items' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Go'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sapps1.aws.chsinc.ds/flp#Supplier-manageLineItems&amp;/?sap-iapp-state=ASC486VWOTEO1EBRVHC5WRASX6VSSQBFMJRGK5C8" DesignTimeRectangle="1662, 283, 43, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Go'" FullSelectorArgument="&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.SmartFilterBar-btnGo' /&gt;" FuzzySelectorArgument="&lt;webctrl id='application-Supplier-manageLineItems-component---fin.ap.lineitems.display.s1View--fin.ap.lineitems.display.SmartFilterBar-btnGo' tag='BUTTON' type='' class='sapMBtnBase sapMBtn sapMBtnInverted sapUiCompFilterBarPaddingRightBtn' aaname='Go' check:innerText='Go' /&gt;" Guid="1e8ada54-df70-446a-8a9b-20b613a077e5" InformativeScreenshot="b51846bdf6c6780b361b850491217849.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Manage Supplier Line Items' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'SAP.UI.CORE.ICON __butt…'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SAP.UI.CORE.ICON __butt…'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461e639c-26de-42a4-b630-b6a2a6c5ff34" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sapps1.aws.chsinc.ds/flp#Supplier-manageLineItems&amp;/?sap-iapp-state=ASVD2FT2A3GMHCG6GGQ3J7POO6KV21WIUDZN234H" DesignTimeRectangle="1727, 446, 20, 30" DesignTimeScaleFactor="1.25" FriendlyName="'SAP.UI.CORE.ICON __butt…'" FullSelectorArgument="&lt;webctrl ui5-class='sap.ui.core.Icon' ui5p-src='sap-icon://excel-attachment' /&gt;" FuzzySelectorArgument="&lt;webctrl ui5-class='sap.ui.core.Icon' ui5p-src='sap-icon://excel-attachment' tag='SPAN' type='' class='sapUiIcon sapUiIconMirrorInRTL sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft' aaname='' /&gt;" Guid="95143e73-506e-4f7d-acc2-3a5479149029" InformativeScreenshot="13e3b002ade1341167bb0393a03e42de.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Manage Supplier Line Items' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -352,7 +435,7 @@
                         <ui:AlignmentOptions HorizontalAlignment="xlHAlignGeneral" VerticalAlignment="xlVAlignBottom" WrapText="False" />
                       </ueab:FormatRangeX.Alignment>
                       <ueab:FormatRangeX.Font>
-                        <ui:FontOptions Color="Black" FillColor="Transparent" FontFamilyName="Calibri" Size="11" Style="Regular" />
+                        <ui:FontOptions Color="Black" FillColor="Transparent" FontFamilyName="Calibri" Size="11" Style="Regular" UnderlineStyle="None" />
                       </ueab:FormatRangeX.Font>
                       <ueab:FormatRangeX.Format>
                         <ueab:NumberFormat DecimalPlaces="2" UseThousandSeparator="True" />
